@@ -1,0 +1,244 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+.info{ width:100%; height:800px;}
+form {
+	float: left;
+}
+input{
+	display: block;
+	width: 150px;
+	cursor: pointer;
+	background:#86ADCA;
+	height: 35px;
+	margin-bottom:5px;
+	 border-radius:5px;
+	 border:0;
+	  box-shadow:2px -2px 2px rgba(94,172,215,0.8);
+
+}
+#length,#color{ background:none; box-shadow:none;}
+#upload{ position:relative; overflow:hidden;}
+#files{ opacity:0;filter:alpha(opacity=100);}
+#upload a{ display:inline-block; width:150px; height:35px; line-height:35px; position:absolute; left:0px; top:5px; text-align:center; color:#000; text-decoration:none; background:#86ADCA; border-radius:5px; box-shadow:2px -2px 2px rgba(94,172,215,0.8);}/*设置 上传文件时的文字显示*/
+
+.button{ width:100px; background:#556FD2; border-radius:0 15px 0 15px; box-shadow:1px 2px 2px #6167E0; color:rgba(255,255,255,.5); font-size:18px; margin-top:15px;}
+.content {
+	display: block;
+	float: left;
+	height: 35px;
+	line-height:35px;
+	margin-right:35px;
+	width: 300px;
+	text-align:right;
+}
+select{ display:block; width:150px; height:35px; background:#86ADCA; cursor: pointer; border-radius:5px; box-shadow:2px -2px 2px rgba(94,172,215,0.8); border:0;	margin-bottom:5px;}
+
+.word p a {
+	float: left;
+	display: block;
+	width: 135px;
+	height: 120px;
+	font-family: abril-fatface;
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 120px;
+	box-shadow: 2px 1px 2px #999966;
+	text-shadow: 0 2px 2px #CCCC00;
+	color: #CC9;
+	background: #39C;
+	text-decoration: none;
+	border-radius: 5px;
+}
+.word p a:hover {
+	background: #960;
+	color: #fff;
+	text-shadow: 0 1px 1px #cccc00;
+
+}
+.word {
+	width: 100px;
+	height: 120px;
+	position: relative;
+	transition: all 1s ease;
+}
+.word p {
+	margin: 50px;
+	width: 135px;
+	height: 120px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.word p:hover {
+	transform: scale(1.5, 1.5);
+}
+.text {
+	margin: 60px;
+	width: 120px;
+	height: 90px;
+	background: linear-gradient(135deg, #DCCB34 30%, #7AA2D8 100%);
+	-ms-background: linear-gradient(135deg, #DCCB34 30%, #7AA2D8 100%);
+	padding-top: 25px;
+	box-shadow: 1px 5px 5px #999999;
+	-ms-box-shadow: 1px 5px 5px #999999;
+	border-radius: 5px;
+		  resize:both;
+overflow:auto;
+}
+.text p a {
+	display: block;
+	width: 90px;
+	height: 30px;
+	text-shadow: 1px 3px 2px #CCD0F7;
+	-ms-text-shadow: 1px 3px 2px #CCD0F7;
+	color: #3A82CF;
+	text-decoration: none;
+	margin-left: 20px;
+	text-align: center;
+	font-size: 22px;
+	font-weight: bold;
+	font-family: aguafina-script;
+	box-shadow: 1px 3px 3px #C1C8B9;
+	-ms-box-shadow: 1px 3px 3px #C1C8B9;
+}
+.text p a:hover {
+	transform: skewX(-15deg);
+	box-shadow: 0px 1px 1px #969;
+	color: #36C;
+	-ms-transform: skewX(-15deg);
+	-ms-box-shadow: 0px 1px 1px #969;
+
+}
+.back p a {
+	display: block;
+	width: 200px;
+	height: 200px;
+	text-align: center;
+	line-height: 180px;
+	font-size: 26px;
+
+	-webkit-animation: myback 15s ease-in-out infinite;
+	color: #663;
+	text-decoration: none;
+	-webkit-box-shadow: 0 10 10px #648AC4;
+	border-radius: 100px;
+
+
+}
+@-webkit-keyframes myback {
+ 0% {
+background:url(images/about_Img.jpg) no-repeat center center;
+background-size:300px;			-webkit-box-sizing:padding-sizing;		/* Safari */
+width:50%;
+}
+ 25% {
+background:url(images/foot_con_Bg(1).jpg) no-repeat center center;
+background-size:300px;			-webkit-box-sizing:padding-sizing;		/* Safari */
+width:30%;
+}
+ 50% {
+background:url(images/yewu_li_Img1.jpg) no-repeat center center;
+background-size:300px;			-webkit-box-sizing:padding-sizing;		/* Safari */
+width:50%;
+}
+ 100% {
+background:url(images/yewu_li_Img2.jpg) no-repeat center center;
+background-size:300px;	
+}
+}
+.clip {
+	padding: 15px;
+	width: 300px;
+	height: 300px;
+	background-color: #7E8FD1;
+	opacity: 0.4;
+	background-clip: content-box;
+	border: 1px solid blue;
+    margin:20px;
+outline:2px solid red;
+outline-offset:15px;
+
+	
+}
+</style>
+</head>
+
+<body>
+<div class="info">
+  <form action="http://www.baidu.com" method="post" enctype="multipart/form-data">
+    <label class="content">Titile</label>
+    <input type="text" list="mydata" value="Mister" required/>
+    <datalist id="mydata">
+      <option value="Mister" class="mis"></option>
+      <option value="Mistress" class="mrs"></option>
+      <option value="Miss" class="ms"></option>
+    </datalist>
+    <label class="content">下拉菜单</label>
+    <select>
+      <option class="mis">Mister</option>
+      <option class="mis">Mister</option>
+      <option class="mis">Mister</option>
+    </select>
+    <label class="content">Name</label>
+    <input type="text" class="uname" required />
+    <label class="content">Phone number</label>
+    <input type="text" pattern="[0-9]{10}"required />
+    <label class="content">Email address</label>
+    <input type="email" required/>
+    <label class="content">Your website</label>
+    <input type="url" required/>
+    <label class="content">Nr.of items to order</label>
+    <input type="number" min="1" max="10" value="1"/>
+    <label class="content">Length</label>
+    <input type="range" min="1" max="10" value="1" id="length"/>
+    <label class="content">Delivery date</label>
+    <input type="date" min="2015-4-8"/>
+    <label class="content">Time of delivery</label>
+    <input type="time" step="60"/>
+    <label class="content">Color of the item</label>
+    <input type="color" value="#fff" name="color" id="color"/>
+    <label class="content">备注：</label>
+    <textarea cols="40" rows="6"></textarea>
+    
+    <label class="content">Files</label>
+    <span id="upload">
+    <a href="#">浏览文件</a>
+    <input type="file" name="file" size="15" maxlength="100" id="files"/>
+    </span>
+    
+    <label class="content">Submit</label>
+    <input type="submit" value="yes" name="sub" class="button"/>
+    <label class="content">Reset</label>
+    <input type="reset" value="重置" name="reset" class="button"/>
+  </form>
+</div>
+<div class="video">
+  <video src="_video/explore_promo.mp4"  controls></video>
+</div>
+<div class="audio">
+  <audio src="_audio/后来-刘若英.mp3" title="后来" controls></audio>
+</div>
+<div class="word">
+  <p><a href="#">动画演示</a></p>
+</div>
+<div class="text">
+  <p><a href="动画演示">嵌套文字</a></p>
+</div>
+<div class="back">
+  <p><a href="#">背景动画</a></p>
+</div>
+<div class="clip">
+  <p>背景裁切</p>
+</div>
+</div>
+</body>
+</html>
